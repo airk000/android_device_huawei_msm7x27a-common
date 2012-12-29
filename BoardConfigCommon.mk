@@ -1,5 +1,4 @@
 # inherit from the proprietary version
--include device/huawei/msm7x27a-common/device.mk
 
 TARGET_ARCH := arm
 TARGET_CPU_ABI := armeabi-v7a
@@ -19,10 +18,10 @@ TARGET_CORTEX_CACHE_LINE_32 := true
 TARGET_USE_SPARROW_BIONIC_OPTIMIZATION := true
 
 # Flags
-TARGET_GLOBAL_CFLAGS	+= -mfpu=neon -mfloat-abi=softfp
-TARGET_GLOBAL_CPPFLAGS	+= -mfpu=neon -mfloat-abi=softfp
-COMMON_GLOBAL_CFLAGS	+= -DQCOM_HARDWARE -DQCOM_7X27A_HARDWARE
-COMMON_GLOBAL_CFLAGS	+= -DGENLOCK_IOC_DREADLOCK -DANCIENT_GL
+TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
+TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
+COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DQCOM_7X27A_HARDWARE
+COMMON_GLOBAL_CFLAGS += -DGENLOCK_IOC_DREADLOCK -DANCIENT_GL -DQCOM_ICS_COMPAT
 
 # Audio
 #TARGET_USES_QCOM_LPA := true
@@ -39,12 +38,15 @@ TARGET_USE_HUAWEI_LIBLIGHTS := true
 #BOARD_HAVE_QCOM_FM := true
 #BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO -DFM_RADIO
 
-TARGET_SPECIFIC_HEADER_PATH := device/huawei/msm7x27a/include
+TARGET_SPECIFIC_HEADER_PATH := device/huawei/msm7x27a-common/include
 
 BOARD_NEEDS_MEMORYHEAPPMEM := true
 
 # OpenGL drivers config file path
-BOARD_EGL_CFG := device/huawei/msm7x27a/config/egl.cfg
+BOARD_EGL_CFG := device/huawei/msm7x27a-common/config/egl.cfg
+
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/huawei/msm7x27a-common/bluetooth/
+
 BOARD_USES_QCOM_HARDWARE := true
 COMMON_GLOBAL_CFLAGS += -DREFRESH_RATE=60
 COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE
