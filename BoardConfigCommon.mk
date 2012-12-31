@@ -45,8 +45,6 @@ BOARD_NEEDS_MEMORYHEAPPMEM := true
 # OpenGL drivers config file path
 BOARD_EGL_CFG := device/huawei/msm7x27a-common/config/egl.cfg
 
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/huawei/msm7x27a-common/bluetooth/
-
 BOARD_USES_QCOM_HARDWARE := true
 COMMON_GLOBAL_CFLAGS += -DREFRESH_RATE=60
 COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE
@@ -77,7 +75,8 @@ ENABLE_WEBGL := true
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
-
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/huawei/msm7x27a-common/bluetooth/
+BOARD_BLUEDROID_VENDOR_CONF := device/huawei/msm7x27a-common/bluetooth/vnd_bcmdhd.txt
 # Boot
 BOARD_WANTS_EMMC_BOOT := true
 # RIL
